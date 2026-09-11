@@ -5,10 +5,14 @@
 # ---- Build artifacts & local SDK (huge, not source) ----
 .dotnet/
 .dotnet-home/
+.dotnet_home/
 .nuget-local/
+.nuget_packages/
 .tools/
 
 # ---- Build output (all projects) ----
+**/bin/
+**/obj/
 source_deepchart/bin/
 source_deepchart/obj/
 source_asm1/bin/

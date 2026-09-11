@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Deepchart.Core</AssemblyName>
+    <RootNamespace />
+    <LangVersion>14.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <DefineConstants>$(DefineConstants);CROSS_PLATFORM;NO_WPF;NO_SHARPDX;NO_WINDOWS</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp" Version="112.1.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="protobuf-net" Version="3.3.0" />
+    <PackageReference Include="protobuf-net.Core" Version="3.3.0" />
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.6.2" />
+    <PackageReference Include="Nager.Date" Version="2.0.0" />
+    <PackageReference Include="ZstdSharp" Version="0.7.2" />
+    <PackageReference Include="Flee" Version="2.0.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.8" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\source_deepchart\**\*.cs">
+      <Exclude>
+        ..\source_deepchart\VolumetricaControls\**\*.cs;
+        ..\source_deepchart\VolAnalysis\Controls\**\*.cs;
+        ..\source_deepchart\Volumetrica\**\*.cs;
+        ..\source_deepchart\VolumetricaAPI\Chart\**\*.cs;
+        ..\source_deepchart\VolumetricaAPI\Grid\**\*.cs;
+        ..\source_deepchart\VolumetricaAPI\Annotation\**\*.cs;
+        ..\source_deepchart\Properties\AssemblyInfo.cs;
+        ..\source_deepchart\Deepchart\DecisionMaking\**\*.cs;
+        ..\source_deepchart\Deepchart\Management\**\*.cs;
+        ..\source_deepchart\Deepchart\Location\**\*.cs;
+        ..\source_deepchart\Deepchart\Registry\**\*.cs;
+        ..\source_deepchart\-Module-*\*.cs
+      </Exclude>
+    </Compile>
+    <Compile Include="**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\source_deepchart\StubServer.StubDecryptor" LogicalName="StubServer.StubDecryptor" />
+    <EmbeddedResource Include="..\source_deepchart\LiteralStub.StubEditor" LogicalName="LiteralStub.StubEditor" />
+    <EmbeddedResource Include="..\source_deepchart\RandomStub.StubStream" LogicalName="RandomStub.StubStream" />
+    <EmbeddedResource Include="..\source_deepchart\StubSingleton.InspectorTracer" LogicalName="StubSingleton.InspectorTracer" />
+    <EmbeddedResource Include="..\source_deepchart\OrderedStub.CommonStub" LogicalName="OrderedStub.CommonStub" />
+  </ItemGroup>
+</Project>
